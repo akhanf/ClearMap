@@ -67,9 +67,9 @@ def parse_overlaps(img_path):
             for attr in custom_props:
                 if '@label' in attr.keys():
                     if attr['@label'] == 'xyz-Table X Overlap':
-                        x_overlap = round(attr['@Value'])
-                    elif attr['@label'] == 'xyz-Table X Overlap':
-                        y_overlap = round(attr['@Value'])
+                        x_overlap = round(float(attr['@Value']))
+                    elif attr['@label'] == 'xyz-Table Y Overlap':
+                        y_overlap = round(float(attr['@Value']))
     else:
         raise ValueError(f'parser type "{parser}" is not recognised')
 
